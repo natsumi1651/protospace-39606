@@ -6,17 +6,16 @@
             <%= image_tag prototype.image.variant(resize: '500x500'), class: 'card__img' if prototype.image.attached?%>
            <% end %>
             <div class='card__title'>
-              <%= link_to prototype.title %>
+              <%= link_to prototype.title, prototype_path(prototype.id) %>
             </div>
             <div class='card__summary'>
             <%= link_to prototype.catch_copy %>
             </div>
             <div class='card__user'>
-            <% if user_signed_in? %>
+           
              by<%= link_to prototype.user.name, user_path(prototype.id), class: :greeting__link %>
-            <% else %>
-             by<%= link_to prototype.user.name, user_path(2), class: :greeting__link %>
-            <% end %>
+           
+           
             </div>
       </div>
     </div>

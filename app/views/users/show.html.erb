@@ -30,10 +30,9 @@
       <div class="user__card">
         <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
         <% @prototypes.each do |prototype| %>
-          <% if prototype.user == current_user %>
           <%= render partial: "prototypes/prototype", locals: { prototype: prototype } %>
           <% break %>
-          <% end %>
+          
         <% end %>
       </div>
     </div>
